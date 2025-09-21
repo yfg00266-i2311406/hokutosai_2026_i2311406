@@ -239,6 +239,23 @@
     word-break: keep-all;         /* 単語の途中で切らない */
     overflow-wrap: break-word;    /* 英語の長単語は単語単位で折返し */
   }
+
+   /* 基本情報テーブルは3:7 */
+  #basic table {
+    table-layout: auto;  /* colgroupを優先させる */
+  }
+  #basic table colgroup col:first-child {
+    width: 30% !important;
+  }
+  #basic table colgroup col:last-child {
+    width: 70% !important;
+  }
+
+  /* それ以外の表は均等割りのまま */
+  section:not(#basic) table {
+    table-layout: fixed;
+  }
+
 }
 
 
