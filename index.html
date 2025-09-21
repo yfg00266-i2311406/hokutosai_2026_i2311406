@@ -198,6 +198,8 @@
     @media (max-width: 768px) {
   header h1 { font-size: 2.5rem; }
   header p { font-size: 1.2rem; }
+
+  /* ハンバーガーメニューを表示 */
   #hamburger-button { display: block; }
   nav {
     position: fixed;
@@ -215,25 +217,31 @@
   }
   nav.active { left: 0; }
   nav a { font-size: 1.5rem; margin: 20px 0; }
+
   .container { padding: 0 15px; }
   section { padding: 40px 10px; }
 
-  /* 表を横スクロールさせず縮小 */
+  /* 表のスマホ対応 */
   .table-container {
-    overflow-x: hidden;
+    overflow-x: hidden;   /* 横スクロール禁止 */
+    width: 100%;
   }
   table {
-    width: 100%;
-    min-width: auto;   /* ←固定幅を解除 */
-    table-layout: fixed;
+    width: 100%;          /* 幅いっぱいに */
+    min-width: 0;         /* 固定幅解除 */
+    table-layout: fixed;  /* 列幅を均等に割り当て */
+    border-collapse: collapse;
   }
-  th, td { 
-    font-size: 0.75em; 
-    padding: 8px;
-    word-wrap: break-word;   /* ←長文は折り返し */
-    white-space: normal;     /* ←強制改行を許可 */
+  th, td {
+    font-size: 0.75em;
+    padding: 6px;
+    white-space: normal;          /* 改行を許可 */
+    word-break: keep-all;         /* 単語の途中で切らない */
+    overflow-wrap: break-word;    /* 英語の長単語は単語単位で折返し */
   }
 }
+
+
 
   </style>
 </head>
